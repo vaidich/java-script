@@ -6,16 +6,16 @@ btnForm.onclick = function () {
   idComment++;
   let form = document.querySelector("#comments-form");
   if(form.name.value.length < 4) {
-    document.querySelector("#error").innerHTML = "Длина имени не менее 4 символов";
+    document.querySelector("#error").innerHTML = "Name must be at least 4 characters long";
     return false;
   } else if(form.comment.value.length < 10) {
-    document.querySelector("#error").innerHTML = "Длина сообщения не менее 10 символов";
+    document.querySelector("#error").innerHTML = "Message length must be at least 10 characters";
     return false;
   }
 
   document.querySelector("#error").innerHTML = "";
 
-  // Установим новое значение для подсчета комментариев
+  // Set a new value for counting comments
   if(countComments == 0)
     document.querySelector("#comments").innerHTML = "";
 
@@ -30,7 +30,7 @@ btnForm.onclick = function () {
 
   document.querySelector("#comments").insertAdjacentHTML('afterbegin', newComment)
 
-  // Очистка формы
+  // Clearing the Form
   form.comment.value = "";
 };
 
@@ -41,5 +41,5 @@ function delComm(id) {
   document.querySelector(".count-comm").innerHTML = countComments;
 
   if(countComments == 0)
-    document.querySelector("#comments").innerHTML = "Пока комментариев нет";
+    document.querySelector("#comments").innerHTML = "No comments yet";
 }
